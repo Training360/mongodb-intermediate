@@ -3,7 +3,7 @@
 ## I. SQL ÉS NOSQL ADATBÁZISOK ÖSSZEHASONLÍTÁSA
 - NoSQL adatbázisok típusai (key value, document store, wide column store, graph stb.)
 - NoSQL adatbázisok jellemzői és felhasználási területük
-- Népszerúbb NoSQL adatbázisok rövid bemutatása (Cassandra, CouchDB, Redis, Hadoop HBase stb.)
+- Népszerűbb NoSQL adatbázisok rövid bemutatása (Cassandra, CouchDB, Redis, Hadoop HBase stb.)
 
 ## II. MONGODB TELEPÍTÉSE ÉS ALAPVETŐ ÜZEMELTETÉSI FELADATAI
 - Működési módok
