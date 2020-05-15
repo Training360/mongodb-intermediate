@@ -31,8 +31,8 @@ megadható.
 - `mongodb://127.0.0.1:27017` kapcsolódás a default szerverhez
 - [MongoVUE](https://mongovue.software.informer.com/) nem stabil és fizetős
 
-### Felhasználók adminisztrációja
-- [Dokumentáció](https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/)
+## Felhasználók adminisztrációja
+- [Dokumentáció](https://docs.mongodb.com/manual/tutorial/enable-authentication/)
 - `.\\mongod.exe --dbpath="<path>"` először indítsuk el az adatbáziskezelőt 
 jogosultságkezelés nélkül
 - `.\\mongo.exe` csatlakozzunk hozzá a shell -el
@@ -53,9 +53,27 @@ már jogosultságkezeléssel fut a szerverünk.
 - `mongo  --authenticationDatabase "admin" -u "mongoAdmin" -p` ezzel pedig 
 elindítjuk a shellt és kérni fogja a jelszót a mongoAdmin felhasználóhoz.
 
-### Jogosultságok
+## Jogosultságok
 Amikor már rendelkezünk egy admin felhasználóval, akkor létre tudunk hozni új 
 felhasználókat az egyes adatbázisokhoz és meg tudjuk határozni a 
-jogosultságaikat.
-- 
-- Mentések és visszatöltések
+jogosultságaikat.  
+```shell
+use nisz
+db.createUser(
+  {
+    user: "nisz",
+    pwd:  passwordPrompt(),   // or cleartext password
+    roles: [ { role: "readWrite", db: "nisz" }]
+  }
+)
+```
+Ezzel létrehoztunk egy új felhasználót nisz néven, akinek jogosultsága van 
+írni és olvasni a nisz adatbázist. A role tömbben igény szerint több 
+adatbázisra vonatkozó beállítást is megadhatunk.  
+- `mongo  --authenticationDatabase "nisz" -u "nisz" -p` itt jelszóval be tud 
+lépeni az új felhasználó. Vigyázzunk, az authentikációs adatbázisnak annak 
+kell lennie, amelyikben létrehoztuk az új felhasználót. 
+He megpróbálunk a nisz adatbázison kívül bármilyen műveletet, hibát fogunk 
+kapni, mivel azokhoz az adatbázisokhoz nem lesz hozzáférésünk.
+
+## Mentések és visszatöltések
