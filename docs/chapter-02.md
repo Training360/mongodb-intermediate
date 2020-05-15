@@ -77,3 +77,24 @@ He megpróbálunk a nisz adatbázison kívül bármilyen műveletet, hibát fogu
 kapni, mivel azokhoz az adatbázisokhoz nem lesz hozzáférésünk.
 
 ## Mentések és visszatöltések
+A mentéshez olyan felhasználóra van szükség, aki tudja olvasni az összes 
+adatbázist. Ehhez lehet, hogy frissíteni kell a felhasználókat:  
+- `mongodump --host=mongodb1.example.net --port=3017 --username=user --password="pass" --out=/opt/backup/mongodump-2013-10-24` ez egy általános kód  
+- `mongodump --out "E:\dump\ --authenticationDatabase "admin" -u "mongoAdmin" -p "admin"` a mi esetünkben pedig így néz ki  
+  
+```shell
+db.updateUser(
+   "<username>",
+    {
+        roles : [
+        { role: "<role>", db: "<database>" } | "<role>" }
+        ]
+    }
+)
+```  
+Előfordulhat, hogy bizonyos adatbázisokhoz a mentést végző felhasználónak nincs 
+jogosultsága olvasásra. Ekkor az updateUser -el ezt meg tudjuk adni.  
+
+### Visszatöltés
+[Dokumentáció a mongorestore eszközhöz](https://docs.mongodb.com/manual/reference/program/mongorestore/#bin.mongorestore)  
+A visszaállítást mongoResotre eszközzel tudjuk elvégezni.  
