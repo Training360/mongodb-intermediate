@@ -20,14 +20,20 @@ megadható.
 ## Opcionális komponensek
 ### MongoDB shell: megismerés, belépés
 - `.\\mongo.exe` shell indítása
+- [Gyors referencia](https://docs.mongodb.com/manual/reference/mongo-shell/)
+
+### MongoDB Compass
+- A telepítőcsomag része.
+- `mongodb://127.0.0.1:27017` kapcsolódás a default szerverhez
 
 ### Külső eszközök 
 - [Mongo Management Studio](http://mms.litixsoft.de/index.php?lang=en)
 - `mongodb://127.0.0.1:27017` kapcsolódás a default szerverhez
-- [MongoVUE](https://mongovue.software.informer.com/)
+- [MongoVUE](https://mongovue.software.informer.com/) nem stabil és fizetős
+
+### Felhasználók adminisztrációja
+- [Dokumentáció](https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/)
 - 
 
-### 
-- Felhasználók adminisztrációja
 - Jogosultságok
 - Mentések és visszatöltések
