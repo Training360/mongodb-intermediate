@@ -23,7 +23,9 @@ megadható.
 
 ### Külső eszközök 
 - [Mongo Management Studio](http://mms.litixsoft.de/index.php?lang=en)
-- [MongoVUE]()
+- `mongodb://127.0.0.1:27017` kapcsolódás a default szerverhez
+- [MongoVUE](https://mongovue.software.informer.com/)
+- 
 
 ### 
 - Felhasználók adminisztrációja
