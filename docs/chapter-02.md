@@ -33,7 +33,29 @@ megadható.
 
 ### Felhasználók adminisztrációja
 - [Dokumentáció](https://docs.mongodb.com/manual/tutorial/manage-users-and-roles/)
-- 
+- `.\\mongod.exe --dbpath="<path>"` először indítsuk el az adatbáziskezelőt 
+jogosultságkezelés nélkül
+- `.\\mongo.exe` csatlakozzunk hozzá a shell -el
+- `use admin` váltsunk az admin adatbázisra
+```shell
+db.createUser(
+  {
+    user: "mongoAdmin",
+    pwd: passwordPrompt(), // or cleartext password
+    roles: [ { role: "userAdminAnyDatabase", db: "admin" }, "readWriteAnyDatabase" ]
+  }
+)
+```
+ezzel a paranccsal létre tudunk hozni egy adminisztrátor jogosultsággal 
+rendelkezdő felhasználót.  
+- `.\\mongod.exe --auth --dbpath="<path>"` az --auth kapcsolóval 
+már jogosultságkezeléssel fut a szerverünk.
+- `mongo  --authenticationDatabase "admin" -u "mongoAdmin" -p` ezzel pedig 
+elindítjuk a shellt és kérni fogja a jelszót a mongoAdmin felhasználóhoz.
 
-- Jogosultságok
+### Jogosultságok
+Amikor már rendelkezünk egy admin felhasználóval, akkor létre tudunk hozni új 
+felhasználókat az egyes adatbázisokhoz és meg tudjuk határozni a 
+jogosultságaikat.
+- 
 - Mentések és visszatöltések
