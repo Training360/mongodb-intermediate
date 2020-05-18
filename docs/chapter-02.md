@@ -54,6 +54,7 @@ már jogosultságkezeléssel fut a szerverünk.
 elindítjuk a shellt és kérni fogja a jelszót a mongoAdmin felhasználóhoz.
 
 ## Jogosultságok
+[Role](https://docs.mongodb.com/manual/reference/built-in-roles/)  
 Amikor már rendelkezünk egy admin felhasználóval, akkor létre tudunk hozni új 
 felhasználókat az egyes adatbázisokhoz és meg tudjuk határozni a 
 jogosultságaikat.  
