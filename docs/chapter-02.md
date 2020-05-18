@@ -77,6 +77,8 @@ kell lennie, amelyikben létrehoztuk az új felhasználót.
 He megpróbálunk a nisz adatbázison kívül bármilyen műveletet, hibát fogunk 
 kapni, mivel azokhoz az adatbázisokhoz nem lesz hozzáférésünk.
 
+## Listázás tiltása
+
 ## Mentések és visszatöltések
 A mentéshez olyan felhasználóra van szükség, aki tudja olvasni az összes 
 adatbázist. Ehhez lehet, hogy frissíteni kell a felhasználókat:  
