@@ -101,5 +101,7 @@ jogosultsága olvasásra. Ekkor az updateUser -el ezt meg tudjuk adni.
 ### Visszatöltés
 [Dokumentáció a mongorestore eszközhöz](https://docs.mongodb.com/manual/reference/program/mongorestore/#bin.mongorestore)  
 A visszaállítást mongoResotre eszközzel tudjuk elvégezni.  
-`.\\mongorestore.exe E:\\dump\\nisz\\orders.bson --authenticationDatabase="admin" -u "mongoAdmin" -p "admin"` ezzel a paranccsak például a nisz adatbázist állítjuk 
+`.\\mongorestore.exe E:\\dump\\nisz\\orders.bson --authenticationDatabase="admin" -u "mongoAdmin" -p "admin"` ezzel a paranccsal például a nisz adatbázist állítjuk 
 vissza.
+
+https://docs.mongodb.com/manual/reference/program/mongorestore/#bin.mongorestore
