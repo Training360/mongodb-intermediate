@@ -8,6 +8,13 @@
 - `admin.system.users` a felhasználók hitelesítési adatait és a hozzájuk rendelt role -okat tárolja.
 - admin.system.version
 
+## ObjectID 
+- [Dokumentáció](https://docs.mongodb.com/manual/reference/method/ObjectId/#ObjectId)  
+
+## Kapcsolódott kliensek listája
+- `db.currentOp().inprog.forEach(function(x) { print(x.client) })`
+
+
 ## Adatbázisok fizikai felépítése, növekedése
 
 - Collection
