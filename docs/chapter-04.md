@@ -24,7 +24,5 @@ Az alapján, hogy mit adunk meg a document paraméterben, frissíti a meglévő 
 db.myColl.aggregate( [ { $match: { category: "cafe" } } ] )
 
 
-## Journal működése
-
-- Atomitás, tranzakciók, izoláció
-- Write concern fogalma
+## tranzakciók
+[Részletes útmutató](https://www.percona.com/blog/2018/06/25/mongodb-transactions-your-very-first-transaction-with-mongodb-4-0/)  

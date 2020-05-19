@@ -8,8 +8,13 @@ Lehet a Docker conatiner kezelővel is futtatni:
 [Docker](https://www.docker.com/get-started)  
 - `docker run --name some-mongo -d mongo` futtatás
 - `docker exec -it some-mongo bash` parancssor a szerveren
-- `docker pull partlab/ubuntu-mongodb` Ubuntu + MongoDB
-- `docker run -d -p 27017:27017 -p 28017:28017 --name mongodb partlab/ubuntu-mongodb` futtatás
+  
+VAGY  
+- `docker pull ubuntu:bionic` 18.04 letöltése
+- `docker run --name u01 -d ubuntu:bionic` futtatása
+- [Ubuntu + MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
+  
+VAGY  
   
 [Telepítés Windowra](https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.6-signed.msi/download)  
 
