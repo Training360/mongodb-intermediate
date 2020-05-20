@@ -13,6 +13,7 @@ VAGY
 - `docker pull ubuntu:bionic` 18.04 letöltése
 - `docker run --name u01 -d ubuntu:bionic` futtatása
 - [Ubuntu + MongoDB](https://docs.mongodb.com/manual/tutorial/install-mongodb-on-ubuntu/)
+- `docker run -v /host/directory:/container/directory --name u01 -d ubuntu:bionic` futtatás felcsatolt könyvtárral
   
 VAGY  
   
@@ -112,3 +113,6 @@ A visszaállítást mongoResotre eszközzel tudjuk elvégezni.
 vissza.
 
 https://docs.mongodb.com/manual/reference/program/mongorestore/#bin.mongorestore
+
+### Import json állományból
+`mongoimport --jsonArray --db test --collection docs --file example2.json`
