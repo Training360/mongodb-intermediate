@@ -45,11 +45,11 @@
 - Kurzorok
 
 ## VI. MONGODB AGGREGÁLÁSOK
--count
--distinct
--group
--Pipeline, stages (aggregate)
--mapReduce
+- count
+- distinct
+- group
+- Pipeline, stages (aggregate)
+- mapReduce
 
 ## VII. MONGODB INDEXEK
 - Teljesítmény mérése, monitorozás (mongostat, mongotop, serverStatus, dbStats, collStats stb.)
