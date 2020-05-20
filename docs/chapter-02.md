@@ -19,6 +19,12 @@ VAGY
   
 [Telepítés Windowra](https://www.mongodb.com/dr/fastdl.mongodb.org/win32/mongodb-win32-x86_64-2012plus-4.2.6-signed.msi/download)  
 
+## Docker mentés visszaállítás
+- `docker save ubuntu:bionic > mongo.tar.gz` mentés  
+- `docker load -i .\mongo.tar.gz` visszaállítás
+- `docker commit ab8915ac4a59 mongo/live` új image meglévő alapján
+- `docker run -i -p 27018:27017 -t mongo/live` új image indítása
+
 ## MongoDB indítása
 - `cd C:\\Program Files\\MongoDB\\Server\\4.2\\bin`
 - `.\\mongod.exe` szerver indítása, tipikus hiba, ha nincs `C:\\data\\db` mappa.
@@ -103,6 +109,20 @@ db.updateUser(
     }
 )
 ```  
+- Lekérdezés eredményének exportálása fájlba: 
+```bash
+mongo localhost:27017/nisz --quiet --eval 'db.test.find({}, {_id:0}).forEach(printjson);' > test-eval.json
+```
+- Sortöréssel elválasztott json állomány esetén: 
+```bash
+mongoimport --type json --db nisz --collection test --fil
+e test-eval.json --mode merge
+```
+- Exportálás csv állományba: 
+```bash
+mongoexport --db nisz --collection test --type=csv -o test.csv --fields=name,salary 
+```
+
 Előfordulhat, hogy bizonyos adatbázisokhoz a mentést végző felhasználónak nincs 
 jogosultsága olvasásra. Ekkor az updateUser -el ezt meg tudjuk adni.  
 
@@ -115,4 +135,4 @@ vissza.
 https://docs.mongodb.com/manual/reference/program/mongorestore/#bin.mongorestore
 
 ### Import json állományból
-`mongoimport --jsonArray --db test --collection docs --file example2.json`
+`mongoimport --jsonArray --db nisz --collection coutries --file countrydata.json`

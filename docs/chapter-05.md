@@ -7,8 +7,8 @@
 - sort `db.test.aggregate([ { $match: {salary: {$gt: 900000}} }, { $sort: {salary: -1 } } ])`
 - összetett példa `db.test.aggregate([ { $match: {salary: {$gt: 900000}} }, {$group: {_id: "$salary", total: { $sum: "$salary" }}} ])`
 
-## VII. MONGODB INDEXEK
-### Teljesítmény mérése, monitorozás
+# VII. MONGODB INDEXEK
+## Teljesítmény mérése, monitorozás
 - `mongostat -i` interaktív módban
 - `mongotop`
 - `db.stats()`
